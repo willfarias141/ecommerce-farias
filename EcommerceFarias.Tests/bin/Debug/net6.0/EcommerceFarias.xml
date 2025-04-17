@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EcommerceFarias</name>
+    </assembly>
+    <members>
+        <member name="M:EcommerceFarias.Controllers.CategoryController.Create(EcommerceFarias.Model.CategoryViewModel)">
+             <summary>
+             Cadastrar uma categoria.
+             </summary>
+             <param name="category">Informações da categoria.</param>
+             <remarks>
+             Exemplo:
+            
+                 POST /api/v1/category
+                 {
+                    "name": "electronics",
+                    "parentcategoryid": 1
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.CategoryController.GetAll">
+            <summary>
+            Consultar lista de categorias.
+            </summary>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.CategoryController.GetById(System.Int32)">
+            <summary>
+            Consultar uma categoria pelo Id.
+            </summary>
+            <param name="id">Id da categoria.</param>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.CategoryController.Delete(System.Int32)">
+            <summary>
+            Excluir uma categoria.
+            </summary>
+            <param name="id">Id da Categoria.</param>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.ProductController.Create(EcommerceFarias.Model.ProductRequest)">
+             <summary>
+             Cadastrar um produto.
+             </summary>
+             <param name="product">Informações do produto (nome, descrição, ean, preço, estoque, categorias).</param>
+             <remarks>
+             Exemplo:
+            
+                 POST /api/v1/products
+                 {
+                    "name": "Nome do produto",
+                    "description": "Descricao do produto",
+                    "ean": 3846347129351,
+                    "price": 3699.01,
+                    "stock": 200,
+                    "status": "pendente",
+                    "categories": [
+                         5
+                    ]
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.ProductController.UploadImagem(System.Int64,Microsoft.AspNetCore.Http.IFormFile,Amazon.S3.IAmazonS3,Microsoft.Extensions.Options.IOptions{EcommerceFarias.Model.AwsSettings})">
+            <summary>
+            Cadastrar uma imagem para o produto.
+            </summary>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.ProductController.Edit(System.Int64,EcommerceFarias.Model.ProductRequest)">
+            <summary>
+            Editar um produto.
+            </summary>
+            <param name="ean">Ean.</param>
+            <param name="productRequest">Informações do produto que podem ser editadas: nome, descrição, ean, status, preço e estoque.</param>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.ProductController.Delete(System.Int64)">
+            <summary>
+            Excluir um produto.
+            </summary>
+            <param name="ean">Ean.</param>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.ProductController.GetAll(System.String,System.Nullable{System.Int32},System.Nullable{System.Decimal},System.Nullable{System.Decimal})">
+            <summary>
+            Consultar lista de produtos.
+            </summary>
+            <remarks>
+            Exemplo de uso:
+                
+                GET /api/v1/products → lista todos os produtos
+                
+                GET /api/v1/products?status=ativo → lista apenas os produtos ativos
+                
+                GET /api/v1/products?categoryId=7 → lista apenas os produtos da categoria 7
+                
+                GET /api/v1/products?minPrice=100 → lista apenas os produtos com preço acima de 100
+                
+                GET /api/v1/products?maxPrice=100 → lista apenas os produtos com preço abaixo de 100
+                
+            </remarks>
+        </member>
+        <member name="M:EcommerceFarias.Controllers.ProductController.GetByEan(System.Int64)">
+            <summary>
+            Consultar um produto.
+            </summary>
+            <param name="ean">Ean.</param>
+        </member>
+        <member name="P:EcommerceFarias.Model.ProductRequest.Name">
+            <summary>
+            Nome.
+            </summary>
+        </member>
+        <member name="P:EcommerceFarias.Model.ProductRequest.Description">
+            <summary>
+            Descrição.
+            </summary>
+        </member>
+        <member name="P:EcommerceFarias.Model.ProductRequest.Ean">
+            <summary>
+            EAN.
+            </summary>
+        </member>
+        <member name="P:EcommerceFarias.Model.ProductViewModel.Name">
+            <summary>
+            Nome.
+            </summary>
+        </member>
+        <member name="P:EcommerceFarias.Model.ProductViewModel.Description">
+            <summary>
+            Descrição.
+            </summary>
+        </member>
+        <member name="P:EcommerceFarias.Model.ProductViewModel.Ean">
+            <summary>
+            EAN.
+            </summary>
+        </member>
+    </members>
+</doc>
