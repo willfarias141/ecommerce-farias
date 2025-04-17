@@ -1,0 +1,36 @@
+# Build results
+bin/
+obj/
+out/
+publish/
+TestResults/
+*.user
+*.suo
+*.cache
+*.dbmdl
+
+# Visual Studio files
+.vscode/
+.vs/
+
+# Logs
+*.log
+
+# Database
+*.mdf
+*.ldf
+
+# NuGet
+*.nupkg
+packages/
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# dotnet secrets
+secrets.json
